@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>This is function_method</title>
+	</head>
+	<body>
+		<h1>This is function_method</h1>
+		<hr/>
+		<script>
+			function fun(arg1,agr2){
+				return arg1+arg2;
+			}
+			document.write(fun.length+"</br>");
+			
+			var newObject = {
+				name:"Arafath",
+				profesion:"project manager"
+			};
+			function fun1(){
+			    return document.write("This is "+this.name+" and his peofesion is "+this.profesion+"</br>");
+			}
+			fun1.call(newObject+"</br>");
+			//bind function
+			function addTocard(price){
+				if(!this.total){
+					this.total=0;	
+				}
+				this.total +=price;
+				return this.name+ " and your total price is $ "+this.total;
+			}
+			var addCard=addTocard.bind(newObject);
+			document.write(addCard(50)+"</br>");
+			document.write(addCard(150));
+		</script>
+	</body>
+</html>
